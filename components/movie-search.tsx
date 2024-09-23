@@ -39,7 +39,7 @@ export default function MovieSearch() {
     setMovieDetails(null); // Reset movie details state
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?t=${searchTerm}&apikey=b884b628`
+        `http://www.omdbapi.com/?t=${searchTerm}&apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
